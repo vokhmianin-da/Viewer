@@ -2,6 +2,8 @@
 #define FILEBROWSER_H
 
 #include <QtWidgets>
+#include <QVBoxLayout>
+#include <QString>
 
 class FileBrowser : public QWidget
 {
@@ -9,13 +11,16 @@ class FileBrowser : public QWidget
 private:
     QFileSystemModel fileModel;
     QTreeView pTreeView;
+    QVBoxLayout layout;
+    QString str;
+    QLabel label;
 public:
     explicit FileBrowser(QWidget *parent = 0);
 
 signals:
 
 public slots:
-    void show();
+    void setMove(const QModelIndex &index);
 };
 
 #endif // FILEBROWSER_H
