@@ -12,8 +12,10 @@ TARGET = Viewer
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    filebrowser.cpp
 
-HEADERS  +=
+HEADERS  += \
+    filebrowser.h
 
-FORMS    +=
+
