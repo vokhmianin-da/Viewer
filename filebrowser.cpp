@@ -8,7 +8,8 @@ FileBrowser::FileBrowser(QWidget *parent) : QWidget(parent)
     layout.addWidget(&label);
     layout.addWidget(&pTreeView);
     setLayout(&layout);
-    connect(&pTreeView, SIGNAL(clicked(QModelIndex)), this, SLOT(setMove(QModelIndex)));
+    connect(&pTreeView, &QTreeView::clicked, this, &FileBrowser::setMove);
+    //connect(&pTreeView, SIGNAL(clicked(QModelIndex)), this, SLOT(setMove(QModelIndex)));
 }
 
 void FileBrowser::setMove(const QModelIndex &index)
